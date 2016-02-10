@@ -1,21 +1,19 @@
 # Software
 Jekyll webserver/blogging platform dockerized with a shared volume to the host
 
-# Installation
+## Installation
 
-Suppose the directory that contains your data is in **/home/myuser/myblog** and the port number that makes the main page accessible is **80**.
+The `start.sh` supposes that the directory that contains your data is in **data** and the port number that makes the main page accessible is **80**. Edit at your convinience. 
 ```
 git clone https://github.com/sofianinho/jekyll.git
-EXPORT BLOG_DATA=/home/myuser/myblog
-EXPORT BLOG_PORT=80
-EXPORT JEKYLL_IMAGE_NAME=jekyll
-EXPORT JEKYLL_IMAGE_TAG=persistent
-cd jekyll/docker-image
-docker build --tag=$JEKYLL_IMAGE_NAME:JEKYLL_IMAGE_TAG .
-docker run \
-	-it \
-	-v $BLOG_DATA:/mnt \
-	-p $BLOG_PORT:4000 \
-	jekyll:persistent
-
+cd jekyll
+chmod +x start.sh
+./start.sh
 ```
+
+## Usage
+
+You have to add files inside you data directory in **_posts** to see them in your main page at: (localhost:80).
+
+### Usage
+Your examples here ... (TBD)
